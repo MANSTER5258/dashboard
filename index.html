@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard SPA | Cloud Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ZONA 1: Navegación -->
+    <header class="top-header">
+        <div class="logo">CloudAdmin</div>
+        <div class="breadcrumbs">Inicio / Monitoreo / <span>Servidores</span></div>
+        <button id="btn-theme-toggle" aria-label="Cambiar modo oscuro">🌙</button>
+    </header>
+
+    <div class="app-layout">
+        <!-- ZONA 1: Navegación Lateral -->
+        <aside class="sidebar">
+            <nav>
+                <a href="#" class="active">📊 Dashboard</a>
+                <a href="#">🖥️ Instancias</a>
+                <a href="#">⚙️ Configuración</a>
+            </nav>
+        </aside>
+
+        <!-- ZONA 2: Contenido Dinámico -->
+        <main class="main-content">
+            <section class="bento-grid">
+                <div class="card stat-card">CPU Uso: 85%</div>
+                <div class="card stat-card">RAM Uso: 64%</div>
+                <div class="card chart-card">Gráfica de Tráfico...</div>
+                <div class="card table-card">
+                    <!-- Tabla de servidores -->
+                    <table>
+                        <tr>
+                            <th>Servidor</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                        <tr>
+                            <td>Web Server 01</td>
+                            <td>Activo</td>
+                            <td><button class="btn-danger" id="btn-delete">Eliminar</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- ZONA 3: Interacción y Acciones Críticas -->
+    
+    <!-- Drawer (Panel deslizante) -->
+    <aside class="drawer" id="config-drawer">
+        <div class="drawer-header">
+            <h3>Configurar Parámetros</h3>
+            <button id="btn-close-drawer">✕</button>
+        </div>
+        <form class="drawer-body">
+            <label>Nombre de Instancia: <input type="text" placeholder="Ej. Server 01"></label>
+            <label>Fecha de Mantenimiento: <input type="date"></label>
+            <label>Auto-escalado: <input type="checkbox" class="toggle-switch"></label>
+            <button type="submit" class="btn-primary">Guardar</button>
+        </form>
+    </aside>
+
+    <!-- Modal de Confirmación -->
+    <dialog class="modal" id="confirm-modal">
+        <div class="modal-content">
+            <h3>⚠️ Acción Crítica</h3>
+            <p>¿Estás seguro de eliminar esta instancia? Esta acción no se puede deshacer.</p>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="btn-cancel-modal">Cancelar</button>
+                <button class="btn-danger" id="btn-confirm-modal">Sí, Eliminar</button>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html>
