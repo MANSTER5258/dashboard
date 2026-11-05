@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ZONA 1: Navegación -->
     <header class="top-header">
         <div class="logo">CloudAdmin</div>
         <div class="breadcrumbs">Inicio / Monitoreo / <span>Servidores</span></div>
@@ -15,7 +14,6 @@
     </header>
 
     <div class="app-layout">
-        <!-- ZONA 1: Navegación Lateral -->
         <aside class="sidebar">
             <nav>
                 <a href="#" class="active">📊 Dashboard</a>
@@ -24,14 +22,12 @@
             </nav>
         </aside>
 
-        <!-- ZONA 2: Contenido Dinámico -->
         <main class="main-content">
             <section class="bento-grid">
                 <div class="card stat-card">CPU Uso: 85%</div>
                 <div class="card stat-card">RAM Uso: 64%</div>
                 <div class="card chart-card">Gráfica de Tráfico...</div>
                 <div class="card table-card">
-                    <!-- Tabla de servidores -->
                     <table>
                         <tr>
                             <th>Servidor</th>
@@ -48,10 +44,10 @@
             </section>
         </main>
     </div>
-
-    <!-- ZONA 3: Interacción y Acciones Críticas -->
     
-    <!-- Drawer (Panel deslizante) -->
+    <!-- Bloqueador de fondo para el Drawer -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
     <aside class="drawer" id="config-drawer">
         <div class="drawer-header">
             <h3>Configurar Parámetros</h3>
@@ -65,7 +61,6 @@
         </form>
     </aside>
 
-    <!-- Modal de Confirmación -->
     <dialog class="modal" id="confirm-modal">
         <div class="modal-content">
             <h3>⚠️ Acción Crítica</h3>
